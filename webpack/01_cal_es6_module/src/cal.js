@@ -5,7 +5,7 @@ var cal = {
 };
 
 //commonjs导出
-module.exports = cal;
+//module.exports = cal;
 
 //es6导出
-export default = cal;
+export default cal;

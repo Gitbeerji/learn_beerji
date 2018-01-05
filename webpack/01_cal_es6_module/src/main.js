@@ -1,5 +1,5 @@
 //引入cal对象
-var cal = require('./cal.js');
+//var cal = require('./cal.js');
 
 //es6的模块引入
 import cal from './cal.js';
