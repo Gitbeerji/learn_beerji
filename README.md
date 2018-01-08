@@ -8,6 +8,8 @@
 		+ 关键字( presets es2015)
 		+ 函数( plugins babel-plugin-transform-runtime)
 
+### 2018-01-08
+
 #### ES6中的模块
 * 默认
 	- 导入 `import [,..xxx] [,..from] './xxx.ext'`
@@ -39,3 +41,32 @@
 ```
 
 * import 和 export 一定要写在顶级， 不要包含在 {}内
+
+#### ES6中代码变化
+* 对象属性的声明
+
+```javascript 
+	var name = 'abc';
+	var person = { name }; //简写 -> var person = {name: name};
+
+	//声明函数
+	var cal = {
+		add: function(){
+			return 1;
+		},
+		add2(){
+			return 2;
+		},
+		add3: function (n1, n2){
+			return n1 + n2;
+		},
+		add4(n1, n2){	//省略function
+			return n1 + n2;
+		}
+	}
+```
+
+* 当属性的key和变量的名相同，而要使用变量的值做value
+* 就可以简写 {name} -> {name: name}
+* es6中函数声明
+	- 省略了 :function
