@@ -83,3 +83,32 @@
 #### 以单文件的方式启动
 * webpack找人来理解单文件代码
 	- vue-loader, vue-template-complier 代码中依赖 vue
+
+* 启动命令
+* `..\\node_modules\\.bin\\webpack-dev-server --inline --hot --open`
+
+#### vue介绍
+*  JS框架
+	- 2014年 Vue诞生 尤雨溪
+	- 2013年 react 
+	- 2009年 angularjs  核心： 模块化 双向数据绑定(脏检测:一个数组($watch))
+* 核心概念： 组件化 双向数据流(基于ES5中的defineProperty来实现的)IE9才支持
+	- __细分代码__
+		+ 头部： 页面、样式、动态效果
+		+ 代码： template script style
+* 框架对比，建议学完vue再看
+* https://cn.vue.js.org/v2/guide/comparison.html#React
+
+#### 双向数据流
+* js内存属性发生改变，影响页面的变化
+* 页面的改变影响js内存属性的改变
+
+#### vue中常用的v-指令演示
+* 常用指令
+* v-text 是元素的 innerText 只能在双标签中使用
+* v-html 是元素的 innerHtml 不能包含<!-- {{xxx}} -->
+* v-if 元素是否移除或插入
+* v-show 元素是否显示或隐藏
+* v-model 双向数据绑定 v-bind是单项数据绑定(内存js改变影响页面)
+
+
