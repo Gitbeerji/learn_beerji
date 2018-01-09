@@ -70,3 +70,16 @@
 * 就可以简写 {name} -> {name: name}
 * es6中函数声明
 	- 省略了 :function
+
+### 2018-01-09
+
+#### vue单文件方式
+* 单文件就是以 *.vue结尾的文件，最终通过webpack也会编译成*.js在浏览器运行
+* 内容： <template></template> + <script></script> + <style></style>
+	- 1: template中只能有一个根节点 2.X
+	- 2: script中 按照 export default {配置} 来写
+	- 3: style中 可以设置scoped属性，让其只在 template中生效
+
+#### 以单文件的方式启动
+* webpack找人来理解单文件代码
+	- vue-loader, vue-template-complier 代码中依赖 vue
