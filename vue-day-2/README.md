@@ -60,3 +60,34 @@
 
 #### wappalyzer
 * 获取到当前网站使用的技术
+
+### 2018-01-19
+
+#### mint-ui
+* 组件库
+* 饿了么出品，element-ui 在PC端使用的
+* 移动端版本 mint-ui
+* https://mint-ui.github.io/#!/zh-cn
+* 注意：
+	- 如果是全部安装的方式
+		+ 1: 在template中可以直接使用组件标签
+		+ 2: 在script中必须要声明,也就是要引入组件对象(按需加载)
+
+#### vue-router
+* 前端路由 核心就是锚点值的改变，根据不同的值，渲染指定DOM位置的不同数据
+* ui-router：锚点值改变，如何获取模板？ ajax
+* vue中，模板数据不是通过ajax请求来，而是调用函数获取到模板内容
+* 核心: 锚点值的改变
+* 以后看到vue开头，就必须Vue.use
+* Vue的核心插件:
+	- vue-router 路由
+	- vuex 管理全局共享数据
+* 使用方式
+	- 1: 下载 `npm i vue-router -S`
+	- 2: 在main.js中引入 `import VueRouter from 'vue-router';`
+	- 3: 安装插件 `Vue.use(VueRouter);`
+	- 4: 创建路由对象并配置路由规则
+		+ `let router = new VueRouter({ routers: [ {path: '/home', components: Home} ]})`
+	- 5: 将其路由对象对递给Vue实例， options中
+		+ options中加入 `router: router`
+	- 6: 在app.vue中留坑 `<router-vue></router-vue>` 
