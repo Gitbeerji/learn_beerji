@@ -91,3 +91,59 @@
 	- 5: 将其路由对象对递给Vue实例， options中
 		+ options中加入 `router: router`
 	- 6: 在app.vue中留坑 `<router-vue></router-vue>` 
+
+### 2018-01-22
+
+#### 命名路由
+* 需求， 通过a标签点击，做页面数据的跳转
+* 使用 router-link 标签
+	- 1: 去哪里  `<router-link to="/beiji">去北京</router-link>`
+	- 2: 去哪里  `<router-link :to="{name: 'bj'}">去北京</router-link>`
+		+ 更利于维护，如果修改了path，只修改路由配置中的path， 该a标签会根据修改后的值生成href属性
+
+#### 参数router-link
+* 在vue-router中， 有两大对象被挂载到了实例this
+* $route(只读，具备信息的对象)， $router(具备功能函数)
+* 查询字符串
+	- 1: 去哪里 `<router-link :to="{name: 'detail', query:{id: 1}}">xxx</router-link>`
+	- 2: 导航 (查询字符串path不用改) `{name: 'detail', path:'/detail', 组件}`
+	- 3: 去了干嘛， 获取路由参数(要注意是query还是params和对应的id名)
+		+ `this.$route.query.id`
+* path方式
+	- 1: 去哪里 `<router-link :to="{name: 'detail', params:{id: 1}}">xxx</router-link>`
+	- 2: 导航 (path方式需要在路由规则上加 /:xxx)
+		+ `{name: 'detail', path:'/detail/:name', 组件}`
+	- 3: 获取路由参数
+		+ `this.$route.param.name`
+
+#### 编程导航
+* 不能保证用户一定会点击某些按钮
+* 并且当前操作，除了路由跳转之外，还有一些别的附加操作
+* this.$router.go 根据浏览器记录， 前进 1，后退 -1
+* this.$router.push(直接跳转到某个页面显示)
+	- push参数: 字符串 /xxx
+	- 对象: `{name: 'xxx', query: {id: 1}, params: {name: 2}}`
+
+#### 复习
+* 过滤器，全局、组件内
+* 获取DOM元素
+	- 元素上 ref="xx" 
+	- 代码中通过 this.$refs.xxx 获取其元素
+		+ 原生DOM标签获取就是原生DOM对象
+		+ 如果是组件标签，获取的就是组件对象，$el继续再获取DOM元素
+* 声明周期时间(钩子)回调函数
+	- created: 数据的初始化、DOM没有生成
+	- mounted: 将数据装载到DOM元素上，此时有DOM
+* 路由
+	- `window.addEventListener('hashchange', fn);`
+	- 根据放`<router-view></router-view>`作为一个DOM上的标识
+	- 最终当锚点值改变触发hashchange的回调函数，我们将指点的模板数据插入到DOM标识上
+
+#### 重定向和404
+* 进入后，默认就是/
+* 重定向 
+	- `{ path:'/', redirect:'/home'}`
+	- `{ path:'/', redirect:{name: 'home'}}`
+* 404: 在路由规则的最后一个规则
+	- 写一个很强大的匹配
+	- `{ path: '*', component: NotFoundVue }`

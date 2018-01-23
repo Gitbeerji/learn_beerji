@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>spa</title>
+	<style>
+		div {
+			height: 100px;
+		}
+		.h {
+			background-color: yellowgreen;
+		}
+		.b {
+			background-color: hotpink;
+		}
+		.f {
+			background-color: blue
+		}
+	</style>
+</head>
+<body>
+	<div class="h">头部</div>
+	<div id="content" class="b"></div>
+	<div class="f">底部</div>
+	<script>
+		
+		window.addEventListener('hashchange', function(){
+			var text = '';
+
+			switch(location.hash){
+				case '#/music' :
+					text = 'other music';
+					break;
+				case '#/movie' :
+				 	text = 'other movie';
+				 	break;
+			}
+
+			document.getElementById('content').innerHTML = text;
+		});
+	</script>
+</body>
+</html>
