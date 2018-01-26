@@ -146,4 +146,12 @@
 	- `{ path:'/', redirect:{name: 'home'}}`
 * 404: 在路由规则的最后一个规则
 	- 写一个很强大的匹配
-	- `{ path: '*', component: NotFoundVue }`
+	- `{ path: '*', component: NotFoundVue}`
+
+#### 多视图
+* components 多视图 是一个对象 对象内多个key和value
+	- key对应视图的name属性
+	- value 就是要显示的组件对象
+* 多个视图 
+	- `<router-vue></router-vue>` name就是default
+	- `<router-vue name="header"></router-vue>` name就是header
