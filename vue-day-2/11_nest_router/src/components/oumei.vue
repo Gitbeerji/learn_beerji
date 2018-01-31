@@ -1,0 +1,10 @@
+<template>
+	<div>
+		<div>欧美</div>
+		<div>欧美</div>
+		<div>欧美</div>
+		<div>欧美</div>
+		<div>欧美</div>
+		<div>欧美</div>
+	</div>
+</template>

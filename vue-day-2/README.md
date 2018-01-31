@@ -155,3 +155,47 @@
 * 多个视图 
 	- `<router-vue></router-vue>` name就是default
 	- `<router-vue name="header"></router-vue>` name就是header
+
+### 2018-01-30
+#### 嵌套路由
+* 用单页去实现多页应用，复杂的嵌套路由
+* 开发中一般会需要使用
+* 视图包含视图
+* 路由父子级关系路由
+```javascript
+	//组件内包含第一层router-view
+	{ name: 'music', path:'/mucic', component: Music .
+	children: [
+		//子路由的path，加/是绝对路径，不加/是相对路径
+		{ name: 'music_oumei', 'oumei', component: Oumei},
+		{ name: 'music_japan', 'japan', cpmponent: Japan},		
+	]
+	} 
+```
+
+### 2018-01-31
+#### vue-resource
+* 可以安装插件，早期vue团队开发的插件
+* 停止维护了，作者推荐使用axios
+* options预检请求，是当浏览器发现跨域 + application/json的请求，就会自动发起
+* 并且发起的时候携带一个content-type的头
+
+#### axios
+* https://segmentfault.com/a/1190000008470355?utm_source=tuicool&utm_medium=referral
+* post请求的时候，如果数据是字符串， 默认头就是键值对， 否则就是appliction/jaon
+* this.$axios.get(url, options)
+* this.$axios.post(url, data, options)
+* options: { params: {id: 1}}//查询字符串 header：{'content-type': 'xxx'}
+* 全局默认设置: Axios.defaults.baseURL = 'xx';
+* 针对当前这一次请求的相关设置
+
+#### 如何练习
+* 1: 路由核心
+	- 路由基本是用
+	- 任选一种路由参数的方式(查询字符串)
+	- 404重定性(路由匹配规则)
+	- 嵌套路由
+	- 编程导航 this.$router.push()
+* 2: http请求
+	- axios 发起get post请求
+	- axios挂载属性方式

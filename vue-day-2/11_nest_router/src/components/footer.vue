@@ -1,15 +1,11 @@
 <template>
 	<div>
-		<div>底部</div>
+		<div class="footer">底部</div>
 	</div>
 </template>
 
-<script>
-	export default {
-		data(){
-			return {
-				
-			};
-		}
+<style scoped>
+	.footer {
+		text-align: center;
 	}
-</script>
+</style>
