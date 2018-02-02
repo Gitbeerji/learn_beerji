@@ -90,3 +90,27 @@
 * 拦截器可以用在添加token上
 
 #### 拦截器操作loading图标
+```javascript
+	//拦截器对每一次请求都有效
+	Axios.interceptors.request.use(function(config){
+		//请求发起之前 显示loading
+		Mint.Indicator.open();
+		return config;
+	});
+
+	Axios.interceptors.response.use(function(data){
+		//响应回来之后，隐藏loading
+		Mint.Indicator.close();
+		console.log(data);
+		return data;
+	});
+```
+
+#### 监视
+* watch 可以对(单个)变量进行监视，也可以深度监视
+* 如果希求是对于10变量进行监视
+* 计算属性computed 可以监视多个值，并且指定返回数据，并且可以显示在页面上
+* 都是options中的根属性
+	- watch监视单个
+	- computed可以监视多个this相关属性值的改变，如果和原值一样
+	- 不会触发函数的调用，并且可以返回对此案
