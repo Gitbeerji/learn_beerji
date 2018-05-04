@@ -81,11 +81,16 @@
 			}
 		},
 		created(){
-			let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-			this.style.height = 360 * w /750 + 'px';
+			
 		},
 		mounted(){
-
+			let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+			this.style.height = 360 * w /750 + 'px';
+			const that = this;
+			window.onresize = function temp(){
+				var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+				that.style.height = 360 * w /750 + 'px';
+			}
 		}
 	}
 </script>

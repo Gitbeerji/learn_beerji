@@ -38,10 +38,10 @@ import Page404 from './components/404/404.vue';
 //创建路由对象，并配置路由规则
 let router = new VueRouter({
 	routes: [
-		{ path: '', redirect: { name: 'home'}}, //重定向
+		{ path: '/', redirect: { name: 'home'}}, //重定向
 		{ name: 'home', path: '/home', component: Home},
 		{ name: 'huaban', path: '/huaban', component: Huaban},
-		{ path: '*', component: Page404},
+		{ path: '/*', component: Page404},
 	]
 });
 
